@@ -32,7 +32,6 @@ def filsav():
             Student_dict += [
             {"id":i+1,'Name':fullname,'email': emailid ,'phonenumber':random_number ,
             'Profession':(random.choice(profession)),'Salary':salary ,'Date Of Joining':random_date,'year of experience':experience}]
-            print(Student_dict)
-
+            return render_template("index.html",Student_dict=Student_dict)
 if(__name__)=="__main__":
     app.run(debug=True)
