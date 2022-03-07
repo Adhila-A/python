@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+        <select name="tabfield"  id="tabfield">
+            <option value="id">ID</option>
+            <option value="Name">Name</option>
+            <option value="email">email</option>
+            <option value="phonenumber">phonenumber</option>
+            <option value="Profession">Profession</option>
+            <option value="Salary">Salary</option>
+            <option value="Date Of Joining">Date Of Joining</option>
+            <option value="year of experience">year of experience</option>
+        </select>
+        <button type="submit" value="checking" id="btn">Add</button>
+        <br><br> <br><br>
+        <form action="/download" method="POST">
+            <table>
+                <tr>
+                    {%for  key,value in Student_dict%}
+                    <td>{{key,value}}</td>
+                    {%endfor%}
+                </tr>
+            </table>
+    
+            <label>Enter the number  of fields</label>
+            <input type="number" id="in" name="nof">
+            <h4>Selected field</h4>
+            <table id="selfield" value="tabdata" >
+            </table>
+            <button type="submit"  id="btnsub">submit</button>
+        </form>
+        
+        <script src="{{url_for('static', filename='jname.js')}}"></script>
+
+
+</body>
+</html>
